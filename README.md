@@ -1,5 +1,9 @@
 # GTNH Docker image
 
+![GitHub License](https://img.shields.io/github/license/istoleyurballs/gtnh-docker)
+![GitHub Release](https://img.shields.io/github/v/release/istoleyurballs/gtnh-docker)
+![GitHub Release Date](https://img.shields.io/github/release-date/istoleyurballs/gtnh-docker)
+
 This repository contains the tool to build a GTNH server docker image with lazync and rcon-cli installed.
 
 An example compose file is available at [compose.yml].
