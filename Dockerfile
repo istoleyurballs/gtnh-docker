@@ -5,6 +5,9 @@ ARG RCONCLI_VERSION
 ARG GTNH_VERSION
 ARG GTNH_VARIANT
 
+# Dependencies
+RUN apk add bash
+
 # Setup user
 RUN adduser -D -H minecraft
 

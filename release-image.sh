@@ -9,7 +9,7 @@ GTNH_VARIANT=Java_17-25
 
 IMAGE_REPO="ghcr.io/istoleyurballs"
 IMAGE_NAME="minecraft-gtnh"
-IMAGE_TAG_REV="1"
+IMAGE_TAG_REV="9"
 
 IMAGE_TAG="$GTNH_VERSION-java25-rev$IMAGE_TAG_REV"
 

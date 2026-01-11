@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Wrapper script adapted from lazymc example
 
 # Server JAR file
@@ -12,7 +12,7 @@ else
 fi
 
 # Patch server.properties
-if [ -n "$MOTD"]; then
+if [ -n "$MOTD" ]; then
   echo '[GTNH Docker] Patching MOTD'
   sed -n -e '/^motd=/!p' -e "\$amotd=$MOTD" -i server.properties
 fi
@@ -39,14 +39,6 @@ sed -n -e '/^rcon.password=/!p' -e '$arcon.password=uwu' -i server.properties
 INIT_MEMORY=${INIT_MEMORY:-1G}
 MAX_MEMORY=${MAX_MEMORY:-1G}
 
-# Trap SIGTERM, forward it to server process ID
-trap 'kill -TERM $PID' TERM INT
-
-# Start server
-java -Xms$INIT_MEMORY -Xmx$MAX_MEMORY @java9args.txt -jar $SERVER_JAR --nogui &
-
-# Remember server process ID, wait for it to quit, then reset the trap
-PID=$!
-wait $PID
-trap - TERM INT
-wait $PID
+# Start server with exec so that lazymc can correctly send it signals
+echo '[GTNH Docker] Exec java'
+exec java -Xms$INIT_MEMORY -Xmx$MAX_MEMORY @java9args.txt -jar $SERVER_JAR --nogui
