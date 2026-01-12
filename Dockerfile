@@ -9,7 +9,7 @@ ARG GTNH_VARIANT
 RUN apk add bash
 
 # Setup user
-RUN adduser -D -H minecraft
+RUN adduser -u 1000 -D -H minecraft
 
 # Download lazymc binary
 RUN mkdir -p /usr/local/bin &&\
@@ -24,13 +24,13 @@ RUN mkdir -p /usr/local/bin &&\
 
 # Setup /minecraft directory
 # - Download & extract pack archive
-# - Prepare directories susceptible to being mounted (/World, /backups)
+# - Prepare directories susceptible to being mounted (/World, /backups, /config/JourneyMapServer, /logs)
 # - Set permissions
 RUN mkdir /minecraft &&\
     wget https://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_${GTNH_VERSION}_Server_${GTNH_VARIANT}.zip -O /minecraft/pack.zip &&\
     unzip /minecraft/pack.zip -d /minecraft &&\
     rm /minecraft/pack.zip  &&\
-    mkdir -p /minecraft/World /minecraft/backups &&\
+    mkdir -p /minecraft/World /minecraft/backups /minecraft/config/JourneyMapServer /minecraft/logs &&\
     chown -R minecraft:minecraft /minecraft
 
 # Patches for the pack

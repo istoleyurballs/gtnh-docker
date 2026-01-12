@@ -13,11 +13,19 @@ services:
       VIEW_DISTANCE: '4'
 
     volumes:
-      - ./data/whitelist.json:/minecraft/whitelist.json:ro
-      - ./data/ops.json:/minecraft/ops.json:ro
       - mc-world:/minecraft/World
+      - mc-journeymap:/minecraft/config/JourneyMapServer
+      - mc-logs:/minecraft/logs
+      # - ./data/server-icon.png:/minecraft/server-icon.png:ro
+      - ./data/whitelist.json:/minecraft/whitelist.json
+      - ./data/ops.json:/minecraft/ops.json
+      # - ./data/banned-players:/minecraft/banned-players.json
+      # - ./data/banned-ips:/minecraft/banned-ips.json
       - mc-backups:/minecraft/backups
 
 volumes:
+  # Ideally they would use the subpath functionnality of a single volume but i won't bother for the example
   mc-world:
+  mc-journeymap:
+  mc-logs:
   mc-backups:

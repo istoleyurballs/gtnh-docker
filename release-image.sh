@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu -o pipefail
+set -e -o pipefail
 
 LAZYMC_VERSION=v0.2.11
 RCONCLI_VERSION=1.7.3
@@ -9,7 +9,7 @@ GTNH_VARIANT=Java_17-25
 
 IMAGE_REPO="ghcr.io/istoleyurballs"
 IMAGE_NAME="minecraft-gtnh"
-IMAGE_TAG_REV="9"
+IMAGE_TAG_REV="10"
 
 IMAGE_TAG="$GTNH_VERSION-java25-rev$IMAGE_TAG_REV"
 
@@ -25,5 +25,7 @@ docker build \
   -t "$IMAGE_REPO/$IMAGE_NAME:latest" \
   .
 
-docker push "$IMAGE_REPO/$IMAGE_NAME:$IMAGE_TAG"
-docker push "$IMAGE_REPO/$IMAGE_NAME:latest"
+if [ -z "$NO_UPLOAD" ]; then
+  docker push "$IMAGE_REPO/$IMAGE_NAME:$IMAGE_TAG"
+  docker push "$IMAGE_REPO/$IMAGE_NAME:latest"
+fi

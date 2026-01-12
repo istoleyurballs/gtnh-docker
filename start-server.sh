@@ -1,6 +1,8 @@
 #!/bin/bash
 # Wrapper script adapted from lazymc example
 
+set -e -o pipefail
+
 # Server JAR file
 SERVER_JAR=lwjgl3ify-forgePatches.jar
 

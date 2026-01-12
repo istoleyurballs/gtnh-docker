@@ -71,10 +71,11 @@ wake_whitelist = true
 
 [time]
 # Sleep after number of seconds.
-sleep_after = 60
+# 20 minutes, 1 minecraft day
+sleep_after = 1200
 
 # Minimum time in seconds to stay online when server is started.
-minimum_online_time = 0
+minimum_online_time = 60
 
 [motd]
 # MOTD, shown in server browser.
