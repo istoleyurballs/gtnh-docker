@@ -26,6 +26,10 @@ if [ -n "$VIEW_DISTANCE" ]; then
   echo '[GTNH Docker] Patching view distance'
   sed -n -e '/^view-distance=/!p' -e "\$aview-distance=$VIEW_DISTANCE" -i server.properties
 fi
+if [ -n "$MAX_TICK_TIME" ]; then
+  echo '[GTNH Docker] Patching max tick time'
+  sed -n -e '/^max-tick-time=/!p' -e "\$amax-tick-time=$MAX_TICK_TIME" -i server.properties
+fi
 if [ -n "$SEED" ]; then
   echo '[GTNH Docker] Patching seed'
   sed -n -e '/^level-seed=/!p' -e "\$alevel-seed=$SEED" -i server.properties
