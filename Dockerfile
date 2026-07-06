@@ -1,9 +1,10 @@
-FROM eclipse-temurin:25.0.1_8-jre-alpine-3.23
+FROM docker.io/eclipse-temurin:25.0.1_8-jre-alpine-3.23
 
 ARG LAZYMC_VERSION
 ARG RCONCLI_VERSION
 ARG GTNH_VERSION
 ARG GTNH_VARIANT
+ARG GTNH_PREFIX
 
 # Dependencies
 RUN apk add bash
@@ -27,7 +28,7 @@ RUN mkdir -p /usr/local/bin &&\
 # - Prepare directories susceptible to being mounted (/World, /backups, /config/JourneyMapServer, /logs)
 # - Set permissions
 RUN mkdir /minecraft &&\
-    wget https://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_${GTNH_VERSION}_Server_${GTNH_VARIANT}.zip -O /minecraft/pack.zip &&\
+    wget https://downloads.gtnewhorizons.com/ServerPacks/${GTNH_PREFIX}GT_New_Horizons_${GTNH_VERSION}_Server_${GTNH_VARIANT}.zip -O /minecraft/pack.zip &&\
     unzip /minecraft/pack.zip -d /minecraft &&\
     rm /minecraft/pack.zip  &&\
     mkdir -p /minecraft/World /minecraft/backups /minecraft/config/JourneyMapServer /minecraft/logs &&\
