@@ -34,4 +34,5 @@ All are required.
 | `RCONCLI_VERSION` | Version of rcon-cli to use, must be a valid github release                         |
 | `GTNH_VERSION`    | Version of GTNH, for example `2.8.4`                                               |
 | `GTNH_VARIANT`    | Suffix of the GTNH version, usually for the java version, for example `Java_17-25` |
+| `GTNH_PREFIX`     | Prefix of the file path, target use is the the `betas/` path prefix                |
 
