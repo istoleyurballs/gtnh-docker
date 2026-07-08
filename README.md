@@ -12,15 +12,17 @@ An example compose file is available at [compose.yml].
 
 Variables that can be set at startup, for example in a compose file.
 
-| Name            | Description                                                           | Default value           |
-|-----------------|-----------------------------------------------------------------------|-------------------------|
-| `EULA`          | Whether or not you accepted the minecraft EULA, must be set to `true` | `false`                 |
-| `MOTD`          | The message of the day to display on the server list                  | `GT:New Horizons 2.8.4` |
-| `DIFFICULTY`    | The difficulty of the server, between `0` and `3`                     | `2`                     |
-| `VIEW_DISTANCE` | View distance in chunks                                               | `10`                    |
-| `SEED`          | The seed to use for world generation                                  | ``                      |
-| `INIT_MEMORY`   | Minimum amount of RAM (passed to `-Xmx`)                              | `1G`                    |
-| `MAX_MEMORY`    | Maxmimum amount of RAM (passed to `-Xms`)                             | `1G`                    |
+| Name              | Description                                                           | Default value               |
+|-------------------|-----------------------------------------------------------------------|-----------------------------|
+| `EULA`            | Whether or not you accepted the minecraft EULA, must be set to `true` | `false`                     |
+| `MOTD`            | The message of the day to display on the server list                  | `GT:New Horizons 2.8.4`     |
+| `DIFFICULTY`      | The difficulty of the server, between `0` and `3`                     | `2`                         |
+| `VIEW_DISTANCE`   | View distance in chunks                                               | `10`                        |
+| `SEED`            | The seed to use for world generation                                  | (empty)                     |
+| `INIT_MEMORY`     | Minimum amount of RAM (passed to `-Xmx`)                              | `1G`                        |
+| `MAX_MEMORY`      | Maxmimum amount of RAM (passed to `-Xms`)                             | `1G`                        |
+| `EXTRA_JAVA_ARGS` | Extra arguments for the JVM                                           | (empty)                     |
+| `EXTRA_MC_ARGS`   | Extra arguments for the Minecraft Server                              | (empty)                     |
 
 ## Build variable
 

@@ -12,7 +12,7 @@ GTNH_PREFIX=betas/
 
 IMAGE_REPO="ghcr.io/istoleyurballs"
 IMAGE_NAME="minecraft-gtnh"
-IMAGE_TAG_REV="1"
+IMAGE_TAG_REV="2"
 
 IMAGE_TAG="$GTNH_VERSION-java25-rev$IMAGE_TAG_REV"
 

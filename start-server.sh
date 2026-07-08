@@ -47,4 +47,4 @@ MAX_MEMORY=${MAX_MEMORY:-1G}
 
 # Start server with exec so that lazymc can correctly send it signals
 echo '[GTNH Docker] Exec java'
-exec java -Xms$INIT_MEMORY -Xmx$MAX_MEMORY @java9args.txt -jar $SERVER_JAR --nogui
+exec java -Xms$INIT_MEMORY -Xmx$MAX_MEMORY @java9args.txt $EXTRA_JAVA_ARGS -jar $SERVER_JAR --nogui $EXTRA_MC_ARGS
