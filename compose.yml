@@ -1,3 +1,5 @@
+# This compose file is for demo purposes, to show off a few things, it is meant to be adapted to your use case.
+
 services:
   minecraft-gtnh:
     image: ghcr.io/istoleyurballs/minecraft-gtnh:latest

@@ -43,7 +43,7 @@ sed -n -e '/^rcon.password=/!p' -e '$arcon.password=uwu' -i server.properties
 
 # Setup java variables
 INIT_MEMORY=${INIT_MEMORY:-1G}
-MAX_MEMORY=${MAX_MEMORY:-1G}
+MAX_MEMORY=${MAX_MEMORY:-4G}
 
 # Start server with exec so that lazymc can correctly send it signals
 echo '[GTNH Docker] Exec java'
